@@ -1,0 +1,202 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  width: 60%;
+  padding: 3%;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px 10px 100px;
+  .birthday {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+    gap: 5%;
+    > div {
+      display: flex;
+      flex-direction: column;
+    }
+    .day,
+    .month,
+    .year {
+      width: calc(100% / 5);
+      transition: 0.3s;
+      label {
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 2%;
+        color: #777;
+        transition: 0.3s;
+      }
+      input {
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        padding: 12%;
+        font-size: 24px;
+        font-weight: bold;
+        transition: 0.3s;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          border-color: #864dfd;
+          caret-color: #864dfd;
+        }
+      }
+      &.error {
+        position: relative;
+        label {
+          color: #ff0000;
+        }
+        input {
+          border-color: #ff0000;
+        }
+        .error {
+          position: absolute;
+          bottom: -25%;
+          font-size: 14px;
+          color: #ff0000;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .icon-arrow {
+    position: relative;
+    margin-bottom: 7%;
+    hr {
+      border-color: hsl(0, 0%, 87%, 0.6);
+    }
+    div {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: #864dfd;
+      position: absolute;
+      right: 0;
+      top: -35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        background-color: #000;
+      }
+      img {
+      }
+    }
+  }
+  .age {
+    .year,
+    .month,
+    .day {
+      font-size: 60px;
+      font-weight: 900;
+      font-style: italic;
+      span {
+        color: #864dfd;
+      }
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .container {
+    width: 65%;
+    .birthday {
+      .day,
+      .month,
+      .year {
+        width: calc(100% / 4);
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .container {
+    width: 75%;
+    .birthday {
+      margin-bottom: 12%;
+      .day,
+      .month,
+      .year {
+        width: calc(100% / 3);
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    width: 85%;
+    .birthday {
+      margin-bottom: 15%;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .container {
+    width: 95%;
+    .birthday {
+      margin-bottom: 22%;
+      margin-top: 12%;
+      .day,
+      .month,
+      .year {
+        input {
+          padding: 10%;
+        }
+        &.error {
+          .error {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+    .icon-arrow {
+      margin-bottom: 18%;
+      div {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .age {
+      margin-bottom: 18%;
+      .year,
+      .month,
+      .day {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .container {
+    .birthday {
+      margin-bottom: 28%;
+      .day,
+      .month,
+      .year {
+        &.error {
+          .error {
+            bottom: -50%;
+          }
+        }
+      }
+    }
+  }
+}
