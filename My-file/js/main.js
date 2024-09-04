@@ -47,7 +47,7 @@ function validateDay(day, month, year) {
   if (validateMonth(month, year)) {
     let maxDays = daysInMonth[month - 1];
     if (month === 2 && isLeapYear(year)) maxDays = 29;
-    return day >= 1 && day <= maxDays;
+    return day >= 1 && day <= maxDays && day <= currentDay;
   } else return false;
 }
 
